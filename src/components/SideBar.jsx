@@ -1,6 +1,5 @@
 
-
-function SideBar({step, setStep}) {
+function SideBar({step}) {
     return (
         <div className="bg-sidebar-mobile md:bg-sidebar-desktop bg-cover bg-no-repeat h-40 md:w-96 md:h-full rounded-lg md:p-6">
             <ul className="flex md:flex-col justify-center gap-5 md:gap-10 pt-8 font-semibold text-white">
