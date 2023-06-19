@@ -1,5 +1,5 @@
 
-function Finishing({ finishPlan, pickAdd }) {
+function Finishing({ finishPlan, pickAdd, setStep }) {
 
     const total = () => {
         const result = finishPlan.map(item => item.bill);
@@ -9,6 +9,10 @@ function Finishing({ finishPlan, pickAdd }) {
 
     }
 
+    const redirect = () =>{
+        setStep(2);
+    }
+
     return (
         <>
             <section className="bg-[hsl(231,100%,99%)] p-4 rounded-lg m-2">
@@ -16,7 +20,12 @@ function Finishing({ finishPlan, pickAdd }) {
                     <div key={item.id}>
                         <p className="text-[hsl(213,96%,18%)] font-semibold">{item.name}{item.time === 'mo' ? ' (Monthly)' : item.time === 'yr' ? ' (Yearly)' : ''}</p>
                         <div className="flex justify-between pb-4">
-                            <a href="#" className="border-b-2 border-gray-400 text-gray-500">Change</a>
+                            <a href="#" 
+                            className="border-b-2 border-gray-400 text-gray-500 
+                            hover:text-[hsl(243,100%,62%)] hover:border-[hsl(243,100%,62%)]" 
+                            onClick={redirect}>
+                                Change
+                            </a>
                             <p className="text-[hsl(213,96%,18%)] font-semibold">${item.bill}/{item.time}</p>
                         </div>
                     </div>

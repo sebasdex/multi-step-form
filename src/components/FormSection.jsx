@@ -5,7 +5,7 @@ import Pick from "./Pick"
 import Plan from "./Plan"
 import Thanks from "./Thanks"
 
-function FormSection({ error, setError, handleChange, formData, step, handlePlanRadio, planRadio, planCash, handlePlanClick, planActive, addOn, finishPlan, checks, handleChangePick, pickAdd }) {
+function FormSection({ error, setError, handleChange, formData, step, setStep, handlePlanRadio, planRadio, planCash, handlePlanClick, planActive, addOn, finishPlan, checks, handleChangePick, pickAdd }) {
     return (
         <>
             <div className='bg-white m-4 -mt-16 rounded-lg p-4 md:m-0 md:flex-1 flex flex-col justify-center gap-6 pb-16 mb-28 md:p-0'>
@@ -40,7 +40,9 @@ function FormSection({ error, setError, handleChange, formData, step, handlePlan
                             : step === 4 ?
                                 <Finishing 
                                 finishPlan={finishPlan}
-                                pickAdd={pickAdd} />
+                                pickAdd={pickAdd}
+                                setStep={setStep}
+                                />
                                 : step === 5 ?
                                     <Thanks /> : ''
                 }
